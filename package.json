@@ -7,13 +7,15 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "clean": "rm dist/main.*.js",
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
-    "dev-start": "webpack-dev-server --hot --mode development --open",
-    "start": "webpack-dev-server --hot --mode production"
+    "dev-start": "NODE_ENV=development concurrently \"node server\" \"webpack-dev-server --hot --mode development --open\"",
+    "start": "NODE_ENV=production node server"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-hot-loader": "^4.12.15"
@@ -25,7 +27,9 @@
     "@hot-loader/react-dom": "^16.10.2+4.12.15",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.0.0",
     "css-loader": "^3.2.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.5.1",
     "html-webpack-plugin": "^3.2.0",
     "html-webpack-template": "^6.2.0",
