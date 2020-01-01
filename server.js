@@ -52,7 +52,7 @@ else {
   console.error('Environment variables not set. Proxy is NOT registered.');
 }
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Express app listening on port ${PORT}!`);
 });
