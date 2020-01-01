@@ -31,6 +31,17 @@ const config = {
           'sass-loader'
         ]
       },
+      {
+        test: /\.(png|jpg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              mimetype: 'image/png'
+            }
+          }
+        ]
+      }
     ]
   },
   resolve: {
