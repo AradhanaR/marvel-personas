@@ -2,16 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import { Grommet, grommet } from 'grommet';
 import * as serviceWorker from './serviceWorker';
 
-import reducer from './reducers/index';
 import App from './app';
+import reducer from './reducers';
+import { powerTheme } from './themes';
 
 const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Grommet full theme={powerTheme}>
+      <App />
+    </Grommet>
   </Provider>,
   document.getElementById('app')
 );
