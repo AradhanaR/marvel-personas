@@ -11,7 +11,7 @@
     "build-prod": "webpack -p --mode production",
     "dev-start": "NODE_ENV=development concurrently \"node server\" \"webpack-dev-server --hot --mode development --open\"",
     "start": "NODE_ENV=production node server",
-    "build": "npm install && npm run build-prod && npm run start"
+    "build": "npm install && npm run build-prod"
   },
   "dependencies": {
     "cors": "^2.8.5",
