@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import { Grommet, grommet } from 'grommet';
 import * as serviceWorker from './serviceWorker';
 
-import App from './app';
+import App from './App';
 import reducer from './reducers';
 import { powerTheme } from './themes';
 
