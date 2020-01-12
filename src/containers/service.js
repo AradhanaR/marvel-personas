@@ -1,7 +1,5 @@
-import React, { Component } from "react";
-import Greeting from '../components/greetings';
-import Hero from '../components/hero';
-
+import React, { Component } from 'react';
+import Greeting from '../components/Greetings';
 
 class Service extends Component {
   render() {

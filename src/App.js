@@ -1,14 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
-import './css/bootstrap.css';
-import './css/bootstrap-grid.css';
-import './css/bootstrap-reboot.css';
-import './styles.scss';
 
-import Header from './components/header';
-import Footer from './components/footer';
-import Home from './containers/home';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './containers/Home';
 import About from './containers/about';
 import Service from './containers/service';
 import Contact from './containers/contact';
