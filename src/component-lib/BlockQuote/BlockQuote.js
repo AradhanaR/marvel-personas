@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled, { css, ThemeContext } from 'styled-components';
 
-function BlockQuote({ text, footer, size, children }) {
+function BlockQuote({ text, footer, size, children, ...rest }) {
   const supportedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
   // Set the default size.
   size = supportedSizes.includes(size) ? size : 'medium';
@@ -9,12 +9,12 @@ function BlockQuote({ text, footer, size, children }) {
   const theme = useContext(ThemeContext);
   const Quote = styled.blockquote`
     position: relative;
-    background: ${theme.global.colors['light-3']};
-    color: ${theme.global.colors.text.light};
+    background: ${rest.background | theme.global.colors['light-3']};
+    color: ${rest.color | theme.global.colors.text.light};
     p::before {
       display: block;
       position: absolute;
-      color: ${theme.global.colors.text.light};
+      color: ${rest.color | theme.global.colors.text.light};
       content: '\\201C';
     }
 
@@ -85,7 +85,7 @@ function BlockQuote({ text, footer, size, children }) {
   `;
   if (text) {
     return (
-      <Quote>
+      <Quote {...rest}>
         <p>{text}</p>
         {footer && <footer>{footer}</footer>}
       </Quote>
