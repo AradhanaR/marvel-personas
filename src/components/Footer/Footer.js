@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react';
+import { Footer as GrommetFooter, Text, Anchor } from 'grommet';
 
 function Footer() {
   return (
-    <footer className="py-5 bg-dark">
-      <div className="container">
-        <p className="m-0 text-center text-white">
-          <a href="http://marvel.com" className="back-link">Data provided by Marvel. © 2014 Marvel</a>
-        </p>
-      </div>
-    </footer>
+    <GrommetFooter background="black" justify="center" pad="small">
+      <Text textAlign="center" size="xxsmall">
+        <Anchor href="http://marvel.com" color="white">
+          Data provided by Marvel. © 2014 Marvel
+        </Anchor>
+      </Text>
+    </GrommetFooter>
   );
 }
 export default Footer;
