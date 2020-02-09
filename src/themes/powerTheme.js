@@ -24,19 +24,32 @@ const powerTheme = {
   },
   button: {
     border: {
-      radius: 0
+      radius: '7px',
+      color: '#2196f3'
+    },
+    color: { dark: 'accent-1', light: 'dark-2' },
+    primary: {
+      color: 'black'
     },
     padding: {
-      vertical: '6px',
+      vertical: '12px',
       horizontal: '24px'
     },
-    extend: props => `
-      font-weight: 500;
-      text-transform: uppercase;
-      font-size: 14px;
-
-      ${props && props.primary && 'color: white;'}
-    `
+    extend: props => {
+      let extraStyles = '';
+      if (props.primary) {
+        extraStyles = `
+            text-transform: uppercase;
+          `;
+      }
+      return `
+          color: white;
+          font-size: 12px;
+          font-weight: bold;
+  
+          ${extraStyles}
+        `;
+    }
   },
   formField: {
     border: {
