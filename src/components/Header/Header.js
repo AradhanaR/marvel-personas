@@ -1,31 +1,62 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ResponsiveContext, Box, Anchor, Text, Button } from 'grommet';
-import { RadialSelected } from 'grommet-icons';
+import { omit } from 'lodash';
+import {
+  ResponsiveContext,
+  Box,
+  Menu,
+  Header as GrommetHeader,
+  Anchor,
+  Nav,
+  ThemeContext
+} from 'grommet';
+import { Home, Group, BusinessService, ContactInfo } from 'grommet-icons';
 
-const currentPath = window.location.pathname;
+const menuItems = [
+  { label: 'Home', href: '/', icon: <Home /> },
+  { label: 'About', href: '/about', icon: <Group /> },
+  { label: 'Service', href: '/service', icon: <BusinessService /> },
+  { label: 'Contact', href: '/contact', icon: <ContactInfo /> }
+];
 
 function Header() {
   return (
-    <Box align="center" pad={{ horizontal: 'xlarge', vertical: 'large' }}>
-      <Box width="xlarge">
-        <ResponsiveContext.Consumer>
-          {size => (
-            <Box
-              direction="row"
-              justify="between"
-              align="center"
-              width="xlarge"
-              alignSelf="center">
-              <Anchor href="/" primary label="Home" />
-              <Anchor href="/about" primary label="About" />
-              <Anchor href="/service" primary label="Service" />
-              <Anchor href="/contact" primary label="Contact" />
-            </Box>
-          )}
-        </ResponsiveContext.Consumer>
-      </Box>
-    </Box>
+    <ThemeContext.Extend
+      value={{
+        global: {
+          colors: { 'accent-1': '#DDDDDD', focus: 'white' }
+        },
+        anchor: {
+          hover: { extend: { color: 'white', textDecoration: 'none' } }
+        }
+      }}>
+      <GrommetHeader background="black" justify="center">
+        <Box
+          width="xlarge"
+          pad="small"
+          responsive={true}
+          direction="row"
+          justify="between">
+          <Box direction="row" gap="small">
+            <Anchor href="/" size="large" color="white">
+              Marvels
+            </Anchor>
+          </Box>
+          <ResponsiveContext.Consumer align="right">
+            {size =>
+              size === 'small' ? (
+                <Menu items={menuItems} />
+              ) : (
+                <Nav direction="row">
+                  {menuItems.map(item => (
+                    <Anchor {...omit(item, ['icon'])} key={item.label} />
+                  ))}
+                </Nav>
+              )
+            }
+          </ResponsiveContext.Consumer>
+        </Box>
+      </GrommetHeader>
+    </ThemeContext.Extend>
   );
 }
 
