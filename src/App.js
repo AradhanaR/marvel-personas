@@ -5,7 +5,7 @@ import { hot } from 'react-hot-loader/root';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './containers/Home';
-import About from './containers/about';
+import Favourite from './containers/favourites';
 import Service from './containers/service';
 import Contact from './containers/contact';
 
@@ -16,7 +16,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
+          <Route exact path="/favourites" component={Favourite} />
           <Route exact path="/service" component={Service} />
           <Route exact path="/contact" component={Contact} />
         </Switch>

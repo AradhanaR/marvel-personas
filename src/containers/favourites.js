@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Greeting from '../components/Greetings';
 
-class About extends Component {
+class Favourites extends Component {
   render() {
     return (
       <div className="container">
-        <Greeting />
+        Favourtie Characters
       </div>
     );
   }
 }
-export default About;
+export default Favourites;
