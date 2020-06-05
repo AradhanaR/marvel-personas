@@ -12,9 +12,9 @@ import {
 import { Home, Group, FormSearch } from 'grommet-icons';
 
 const menuItems = [
-  { label: 'Featured', href: '/', icon: <Home />, isSearchbar: false },
-  { label: 'Favourites', href: '/favourites', icon: <Group />, isSearchbar: false },
-  { label: 'Search', href: '/', icon: <FormSearch />, isSearchbar: true }
+  { label: 'Featured', href: '/', icon: <Home /> },
+  { label: 'Favourites', href: '/favourites', icon: <Group /> },
+  { label: 'Search', href: '/', icon: <FormSearch /> }
 ];
 
 function Header() {
