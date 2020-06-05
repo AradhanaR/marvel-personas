@@ -10,7 +10,8 @@ class Home extends Component {
       <Main
         direction="row"
         justify="center"
-        overflow="none"
+        flex="grow"
+        overflow="auto"
         background={{ image: `url(${bgImg})` }}>
         <Box width="xlarge">
           <Greetings />

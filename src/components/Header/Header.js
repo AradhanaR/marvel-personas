@@ -9,13 +9,12 @@ import {
   Nav,
   ThemeContext
 } from 'grommet';
-import { Home, Group, BusinessService, ContactInfo } from 'grommet-icons';
+import { Home, Group, FormSearch } from 'grommet-icons';
 
 const menuItems = [
-  { label: 'Home', href: '/', icon: <Home /> },
-  { label: 'About', href: '/about', icon: <Group /> },
-  { label: 'Service', href: '/service', icon: <BusinessService /> },
-  { label: 'Contact', href: '/contact', icon: <ContactInfo /> }
+  { label: 'Featured', href: '/', icon: <Home /> },
+  { label: 'Favourites', href: '/favourites', icon: <Group /> },
+  { label: 'Search', href: '/', icon: <FormSearch /> }
 ];
 
 function Header() {
@@ -46,12 +45,12 @@ function Header() {
               size === 'small' ? (
                 <Menu items={menuItems} />
               ) : (
-                <Nav direction="row">
-                  {menuItems.map(item => (
-                    <Anchor {...omit(item, ['icon'])} key={item.label} />
-                  ))}
-                </Nav>
-              )
+                  <Nav direction="row">
+                    {menuItems.map(item => (
+                      <Anchor {...omit(item, ['icon'])} key={item.label} />
+                    ))}
+                  </Nav>
+                )
             }
           </ResponsiveContext.Consumer>
         </Box>

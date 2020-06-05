@@ -32,7 +32,7 @@ const config = {
         ]
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|ico)$/,
         use: [
           {
             loader: 'url-loader',
