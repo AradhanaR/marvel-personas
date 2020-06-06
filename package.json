@@ -10,7 +10,7 @@
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
     "dev-start": "cross-env NODE_ENV=development concurrently \"node server\" \"webpack-dev-server --hot --mode development --open\"",
-    "start": "npm run build-prod && cross-env NODE_ENV=production node server",
+    "start": "npm run build && cross-env NODE_ENV=production node server",
     "build": "npm install && npm run build-prod",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
